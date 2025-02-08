@@ -1,40 +1,152 @@
-/* style.css */
-
+/* General body styling */
 body {
-    font-family: Arial, sans-serif; /* Fallback font family */
-    text-align: center; /* Center-align text */
-    margin: 0; /* Remove default margin */
-    background-color: #FADADD; /* Set background color to light pink */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    background: linear-gradient(to bottom right, #FF9A8B, #FF6A88, #FADADD); /* Gradient background */
+    overflow: hidden;
+    height: 100vh;
 }
 
+/* Main container styling */
 #container {
-    display: flex; /* Use flexbox layout */
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center-align items horizontally */
-    justify-content: center; /* Center-align items vertically */
-    height: 100vh; /* Make the container full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
 }
 
+/* Image container styling */
 #image-container {
-    /* This container will hold the images */
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid white; /* Add a white border around the container */
+    border-radius: 15px; /* Round the corners */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
 }
 
+/* Question styling */
 #question {
-    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the question */
-    font-size: 52px; /* Set font size for the question */
+    font-family: 'Sacramento', cursive;
+    font-size: 52px;
+    color: #D95D67; /* Darker pink for text */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle text shadow */
 }
 
+/* Options (buttons) styling */
 #options {
-    margin-top: 20px; /* Add space above the options */
+    margin-top: 20px;
 }
 
 button {
-    padding: 10px 20px; /* Set padding for buttons */
-    margin: 0 10px; /* Set margin around buttons */
-    font-size: 26px; /* Set font size for buttons */
-    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the options */
-    background-color: #FB607F; /* Set button background color */
-    color: white; /* Set text color to white */
-    border: none; /* Remove button border */
-    cursor: pointer; /* Set cursor to pointer on hover */
+    padding: 10px 25px;
+    margin: 0 10px;
+    font-size: 26px;
+    font-family: 'Sacramento', cursive;
+    background-color: #FB607F;
+    color: white;
+    border: none;
+    border-radius: 50px; /* Circular button style */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.1); /* Slightly enlarge button on hover */
+    background-color: #FF3855;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Add a stronger shadow on hover */
+}
+
+/* Sliding picture styling */
+.sliding-picture {
+    position: absolute;
+    left: -100vw;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    border: 10px solid #FFFFFF; /* Add a white border around the sliding picture */
+    border-radius: 15px; /* Round the corners */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+    animation: slide-in 3s forwards ease-in-out;
+    z-index: 10;
+}
+
+/* Animation for sliding */
+@keyframes slide-in {
+    to {
+        left: 0;
+    }
+}
+
+/* Cat-heart styling */
+#cat-heart {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    border: 10px solid #FFD1DC; /* Pinkish border around the cat-heart */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+    opacity: 0;
+    animation: fade-in 2s ease-in forwards;
+    z-index: 15;
+}
+
+/* Animation for fading in */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Background decorations (optional) */
+body::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, #FF6A88, #FF9A8B);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: float 6s infinite ease-in-out;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #FADADD, #FF6A88);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: float 8s infinite ease-in-out alternate;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
