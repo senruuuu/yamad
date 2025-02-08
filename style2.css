@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif; /* Fallback font family */
+    text-align: center; /* Center-align text */
+    margin: 0; /* Remove default margin */
+    background-color: #a8d5ba; /* Set background color to light mint green */
+}
+
+#container {
+    display: flex; /* Use flexbox layout */
+    flex-direction: row; /* Arrange items side by side */
+    align-items: center; /* Align items vertically in the center */
+    justify-content: center; /* Center-align items horizontally */
+    height: 100vh; /* Make the container full viewport height */
+    gap: 20px; /* Add space between the image and text */
+}
+
+#image-container img {
+    width: 400px;
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 15px; /* Add rounded corners to the image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for aesthetics */
+}
+
+#question {
+    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the question */
+    font-size: 52px; /* Set font size for the question */
+    color: #003049; /* Set text color */
+    text-align: left; /* Align text to the left */
+    max-width: 400px; /* Limit text width for better readability */
+}
+
+#options {
+    margin-top: 20px; /* Add space above the options */
+}
+
+button {
+    padding: 10px 20px; /* Set padding for buttons */
+    margin: 0 10px; /* Set margin around buttons */
+    font-size: 26px; /* Set font size for buttons */
+    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the options */
+    background-color: #548d68; /* Set button background color */
+    color: white; /* Set text color to white */
+    border: none; /* Remove button border */
+    cursor: pointer; /* Set cursor to pointer on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        height: auto; /* Allow content to fit */
+        gap: 10px; /* Reduce the gap between image and text */
+    }
+
+    #image-container img {
+        width: 100%; /* Make the image responsive */
+    }
+
+    #question {
+        text-align: center; /* Center-align text on smaller screens */
+    }
+}

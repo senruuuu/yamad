@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.4.1.min.js"></script>
+
+    <script src="script.js"></script> <!-- Link to external JavaScript file -->
+
     <title>Will You Be My Valentine?</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap">
     <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet -->
 </head>
 <body>
-    <div id="container">
-        <div id="image-container"></div> <!-- Container for displaying images -->
-        <div id="text-container">
-            <div id="question">Will you be my valentine?</div> <!-- Question -->
-            <div id="options">
-                <button id="yes-button" onclick="selectOption('yes')">Yes</button> <!-- Yes button -->
-                <button id="no-button" onclick="selectOption('no')">No</button> <!-- No button -->
-            </div>
-        </div>
-    </div>
+    <div class="container">  
+        <div class="valentines">
+          <div class="envelope"></div>
+          <div class="front"></div>
+          <div class="card">
+          <button id="click-here-button" >Click</button>
 
-    <script src="script.js"></script> <!-- Link to external JavaScript file -->
+          <div class="text">Happy</br> Valentine's</br> Day!</div>
+          <div class="heart"</div>
+          </div>
+          <div class="hearts">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+            <div class="four"></div>
+            <div class="five"></div>
+          </div>
+        </div>
+        </div>
+        <div class="shadow"></div>
+        </div>
+        <script>document.getElementById("click-here-button").addEventListener("click", function () {
+          // Add the slide-out animation class to the container
+          const container = document.querySelector(".container");
+          container.classList.add("slide-out");
+      
+          // Wait for the animation to complete, then redirect
+          setTimeout(() => {
+              window.location.href = "index1.html"; // Replace with your desired URL
+          }, 1000); // Match this timeout with the animation duration (1s)
+      });</script> <!-- Link to external JavaScript file -->
 </body>
 </html>
